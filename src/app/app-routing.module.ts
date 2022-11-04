@@ -1,0 +1,17 @@
+import { NgModule } from '@angular/core'
+import { Routes } from '@angular/router'
+import { NativeScriptRouterModule } from '@nativescript/angular'
+import { HeroDetailComponent } from './hero-detail/hero-detail.component';
+import { HeroListComponet } from './hero-list/hero-list.component';
+
+const routes: Routes = [
+  { path: '', redirectTo: '/list', pathMatch: 'full'},
+  { path: 'list', component: HeroListComponet },
+  { path: 'details/:id', component: HeroDetailComponent },
+];
+
+@NgModule({
+  imports: [NativeScriptRouterModule.forRoot(routes)],
+  exports: [NativeScriptRouterModule],
+})
+export class AppRoutingModule {}
