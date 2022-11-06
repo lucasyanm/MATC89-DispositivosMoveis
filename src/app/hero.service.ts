@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { BehaviorSubject, map, Observable } from 'rxjs';
 import { Hero } from './hero.model';
 
 
@@ -7,7 +8,7 @@ import { Hero } from './hero.model';
 })
 export class HeroService {
 
-  heroes: Hero[] = [
+  heroes$ = new BehaviorSubject<Hero[]>([
     {
       id: 1,
       name: 'Batman',
@@ -20,14 +21,14 @@ export class HeroService {
       id: 3,
       name: 'Antman',
     }
-  ];
+  ]);
 
-  getHeros(): Hero[] {
-    return this.heroes;
+  getHeros(): Observable<Hero[]> {
+    return this.heroes$.asObservable();
   }
 
-  getHero(id: number): Hero {
-    return this.heroes.find(hero => hero.id = id);
+  getHero(id: number): Observable<Hero> {
+    return this.heroes$.pipe(map(heroes => heroes.find(hero => hero.id = id)));
   }
 
 }
