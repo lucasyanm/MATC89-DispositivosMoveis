@@ -25,7 +25,7 @@ export class HeroDetailComponent implements OnInit {
           this.heroService.getHero(+params.get("id"))
         )
       )
-      .subscribe((hero: Hero) => (this.hero = hero));
+      .subscribe((hero: Hero) => (this.hero = { ...hero }));
   }
 
   goBack() {

@@ -26,7 +26,7 @@ export class HeroEditComponet implements OnInit {
         )
       )
       .subscribe((hero: Hero) => {
-        this.hero = hero;
+        this.hero = { ...hero };
       });
   }
 
@@ -36,5 +36,6 @@ export class HeroEditComponet implements OnInit {
 
   save() {
     this.heroService.setHero(this.hero);
+    this.goBack();
   }
 }
