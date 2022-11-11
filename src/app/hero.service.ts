@@ -27,7 +27,7 @@ export class HeroService {
 
   getHero(id: number): Observable<Hero> {
     return this.heroes$.pipe(
-      map((heroes) => heroes.find((hero) => (hero.id = id)))
+      map((heroes) => heroes.find((hero) => hero.id == id))
     );
   }
 
