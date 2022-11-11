@@ -1,4 +1,4 @@
-<ActionBar [title]="titulo"></ActionBar>
+<ActionBar title="Editar"></ActionBar>
 
 <FlexboxLayout
     flexDirection="column"
@@ -12,27 +12,27 @@
     >
         <Label
             class="h3"
-            text="ID:"
-        ></Label>
-        <Label [text]="hero.id"></Label>
-
-
-        <Label
-            class="h3"
             text="Nome:"
         ></Label>
-        <Label [text]="hero.name"></Label>
+        <TextField
+            type="text"
+            [(ngModel)]="hero.name"
+        >
+        </TextField>
     </FlexboxLayout>
 
     <Button
         text="SALVAR"
         (tap)="goBack()"
         margin="0"
+        style="background-color: #B6D7A8;"
     ></Button>
 
     <Button
         text="CANCELAR"
         (tap)="goBack()"
         margin="0"
+        style="background-color: #CC4125;"
+        color="white"
     ></Button>
 </FlexboxLayout>

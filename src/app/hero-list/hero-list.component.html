@@ -16,16 +16,24 @@
         class="h2"
         [text]="hero.name"
       ></Label>
-      <Button
-        text="DETALHES"
-        [nsRouterLink]="['/details', hero.id]"
-        margin="0"
-      ></Button>
-      <Button
-        text="EDITAR"
-        [nsRouterLink]="['/edit', hero.id]"
-        margin="0"
-      ></Button>
+
+      <FlexboxLayout width="100%">
+        <Button
+          text="DETALHES"
+          [nsRouterLink]="['/details', hero.id]"
+          margin="0"
+          width="50%"
+          style="background-color: #9CC2E5;"
+        ></Button>
+        <Button
+          text="EDITAR"
+          [nsRouterLink]="['/edit', hero.id]"
+          margin="0"
+          width="50%"
+          style="background-color: #B6D7A8;"
+        ></Button>
+      </FlexboxLayout>
+
     </FlexboxLayout>
   </ng-template>
 </ListView>

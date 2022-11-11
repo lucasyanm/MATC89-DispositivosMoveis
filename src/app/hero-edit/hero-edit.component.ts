@@ -18,10 +18,6 @@ export class HeroEditComponet implements OnInit {
     private rExtensions: RouterExtensions
   ) {}
 
-  get titulo() {
-    return `Editar ${this.hero.name}`;
-  }
-
   ngOnInit(): void {
     this.route.paramMap
       .pipe(
@@ -29,7 +25,9 @@ export class HeroEditComponet implements OnInit {
           this.heroService.getHero(+params.get("id"))
         )
       )
-      .subscribe((hero: Hero) => (this.hero = hero));
+      .subscribe((hero: Hero) => {
+        this.hero = hero;
+      });
   }
 
   goBack() {
