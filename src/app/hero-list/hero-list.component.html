@@ -1,12 +1,31 @@
 <ActionBar title="Heróis"></ActionBar>
 
-<ListView height="100%" separatorColor="transparent" [items]="heroes$ | async" class="p-16">
+<ListView
+  height="100%"
+  separatorColor="transparent"
+  [items]="heroes$ | async"
+  class="p-16"
+>
   <ng-template let-hero="item">
-    <FlexboxLayout flexDirection="column"
-                   backgroundColor="#f1f1f1"
-                   class="p-8">
-      <Label class="h2" [text]="hero.name"></Label>
-      <Button text="DETALHES" [nsRouterLink]="['/details', hero.id]" margin="0"></Button>
+    <FlexboxLayout
+      flexDirection="column"
+      backgroundColor="#f1f1f1"
+      class="p-8"
+    >
+      <Label
+        class="h2"
+        [text]="hero.name"
+      ></Label>
+      <Button
+        text="DETALHES"
+        [nsRouterLink]="['/details', hero.id]"
+        margin="0"
+      ></Button>
+      <Button
+        text="EDITAR"
+        [nsRouterLink]="['/edit', hero.id]"
+        margin="0"
+      ></Button>
     </FlexboxLayout>
   </ng-template>
 </ListView>

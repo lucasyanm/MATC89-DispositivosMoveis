@@ -1,0 +1,38 @@
+<ActionBar [title]="titulo"></ActionBar>
+
+<FlexboxLayout
+    flexDirection="column"
+    class="p-16"
+>
+    <FlexboxLayout
+        flexDirection="column"
+        backgroundColor="#f1f1f1"
+        class="p-8"
+        marginBottom="16"
+    >
+        <Label
+            class="h3"
+            text="ID:"
+        ></Label>
+        <Label [text]="hero.id"></Label>
+
+
+        <Label
+            class="h3"
+            text="Nome:"
+        ></Label>
+        <Label [text]="hero.name"></Label>
+    </FlexboxLayout>
+
+    <Button
+        text="SALVAR"
+        (tap)="goBack()"
+        margin="0"
+    ></Button>
+
+    <Button
+        text="CANCELAR"
+        (tap)="goBack()"
+        margin="0"
+    ></Button>
+</FlexboxLayout>

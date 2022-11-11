@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "cli": {
+    "defaultCollection": "@nativescript/schematics",
+    "analytics": "09341097-b375-4500-b065-25874d310844"
+  },
+  "projects": {
+    "my-project-name": {
+      "root": "",
+      "sourceRoot": "src",
+      "projectType": "application",
+      "prefix": "ns"
+    }
+  },
+  "defaultProject": "my-project-name"
+}
